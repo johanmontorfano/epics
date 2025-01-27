@@ -20,12 +20,13 @@ local function print_guide(entry)
         title = docs[section]["title"]
         content = table.concat(Get_sections(docs[section]["children"]),", ")
     end
-
     print(string.format("Section %s: %s", section, docs[section]["title"]))
     if entry ~= section then
         print(string.format("Rule   %s: %s", entry, title))
     end
-    print(string.format("\n\t%s", content))
+    for _, line in pairs(Compose_80_chars_lines(content)) do
+        print(line)
+    end
 end
 
 -- Checks if `cs_entry` is correcly formatted and an available entry. If it's 
