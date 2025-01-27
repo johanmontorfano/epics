@@ -1,0 +1,215 @@
+C-O:
+  title: Files Organization
+  children:
+    C-O1:
+      title: Contents of the Repository
+      content: >
+        Repositories must not contain compiled, temporary, or unnecessary files.
+        Git should be used to keep the repository clean.
+    C-O2:
+      title: File Extensions
+      content: >
+        Sources must only have .c or .h extensions.
+    C-O3:
+      title: File Coherence
+      content: >
+        A source file must match a logical entity, grouping relevant functions.
+        Files should contain a maximum of 10 functions, of which 5 can be non-static.
+    C-O4:
+      title: Naming Files and Folders
+      content: >
+        Names must define logical entities, be in English, and follow the snake_case
+        convention. Abbreviations are allowed only if meaningful.
+C-G:
+  title: Global Scope
+  children:
+    C-G1:
+      title: File Header
+      content: >
+        All C files and Makefiles must start with a standard Epitech header,
+        created using specific Emacs commands.
+    C-G2:
+      title: Separation of Functions
+      content: >
+        Functions must be separated by exactly one empty line.
+    C-G3:
+      title: Indentation of Preprocessor Directives
+      content: >
+        Preprocessor directives must be indented according to their level of
+        indirection, using 4 spaces per level.
+    C-G4:
+      title: Global Variables
+      content: >
+        Avoid global variables as much as possible. Only global constants,
+        marked with 'const,' are allowed.
+    C-G5:
+      title: Include Directives
+      content: >
+        Only include C header (.h) files in include directives.
+    C-G6:
+      title: Line Endings
+      content: >
+        Use UNIX-style line endings (\n) and avoid backslashes at line ends.
+    C-G7:
+      title: Trailing Spaces
+      content: >
+        No trailing spaces must be present at the end of lines.
+    C-G8:
+      title: Leading and Trailing Lines
+      content: >
+        No leading empty lines are allowed. Only one trailing empty line is permitted.
+    C-G9:
+      title: Constant Values
+      content: >
+        Non-trivial constant values should be defined as a global constant or macro
+        to facilitate modifications.
+    C-G10:
+      title: Inline Assembly
+      content: >
+        Inline assembly is not allowed. Programming must be done in C.
+C-F:
+  title: Functions
+  children:
+    C-F1:
+      title: Coherence of Functions
+      content: >
+        Functions should perform one task, adhere to the single-responsibility
+        principle, and not mix abstraction levels.
+    C-F2:
+      title: Naming Functions
+      content: >
+        Function names must define their task, be in English, and follow the
+        snake_case convention. Names must contain verbs.
+    C-F3:
+      title: Number of Columns
+      content: >
+        Lines must not exceed 80 columns in length, including tabs and line breaks.
+    C-F4:
+      title: Number of Lines
+      content: >
+        Function bodies must be as short as possible and not exceed 20 lines unless
+        conceptually simple.
+    C-F5:
+      title: Number of Parameters
+      content: >
+        A function must not have more than 4 parameters, except variadic functions.
+    C-F6:
+      title: Functions Without Parameters
+      content: >
+        Functions with no parameters must explicitly declare 'void' as their parameter.
+    C-F7:
+      title: Structures as Parameters
+      content: >
+        Structures must be passed to functions using a pointer, not by copy.
+    C-F8:
+      title: Comments Inside a Function
+      content: >
+        Functions should be self-explanatory without comments inside them.
+    C-F9:
+      title: Nested Functions
+      content: >
+        Nested functions are not allowed due to their complexity.
+C-L:
+  title: Layout Inside a Function Scope
+  children:
+    C-L1:
+      title: Code Line Content
+      content: >
+        Each line must correspond to only one statement, with exceptions for 'for' loops.
+    C-L2:
+      title: Indentation
+      content: >
+        Use 4 spaces for each level of indentation; no tabs are allowed.
+    C-L3:
+      title: Spaces
+      content: >
+        Use one space as a separator and place spaces correctly around operators,
+        commas, and control structures.
+    C-L4:
+      title: Curly Brackets
+      content: >
+        Opening curly brackets must be at the end of the line, and closing ones must
+        be on a new line, with some exceptions.
+    C-L5:
+      title: Variable Declarations
+      content: >
+        Variables must be declared at the beginning of a function, one per line.
+    C-L6:
+      title: Blank Lines
+      content: >
+        Separate variable declarations from the remainder of the function with a
+        blank line.
+C-V:
+  title: Variables and Types
+  children:
+    C-V1:
+      title: Naming Identifiers
+      content: >
+        Identifiers must be in English and follow the snake_case convention. Type
+        names must end with '_t.'
+    C-V2:
+      title: Structures
+      content: >
+        Variables should be grouped into small, coherent structures, avoiding
+        unrelated data.
+    C-V3:
+      title: Pointers
+      content: >
+        The asterisk (*) must be attached to the variable name, with correct spacing
+        depending on context.
+C-C:
+  title: Control Structures
+  children:
+    C-C1:
+      title: Conditional Branching
+      content: >
+        Avoid more than 3 branches in conditional blocks. Nested branches should
+        be refactored.
+    C-C2:
+      title: Ternary Operators
+      content: >
+        Ternary operators are allowed if simple and readable. Nested or chained
+        ternaries are not allowed.
+    C-C3:
+      title: Goto
+      content: >
+        The 'goto' statement is forbidden due to its contribution to unreadable code.
+C-H:
+  title: Header Files
+  children:
+    C-H1:
+      title: Content
+      content: >
+        Headers must only contain function prototypes, type declarations, structures,
+        macros, and similar elements.
+    C-H2:
+      title: Include Guard
+      content: >
+        Headers must be protected from double inclusion using '#ifndef', '#define',
+        and '#endif'.
+    C-H3:
+      title: Macros
+      content: >
+        Macros must fit on a single line and correspond to one statement. Avoid using
+        macros to shorten long expressions unnecessarily.
+C-A:
+  title: Advanced
+  children:
+    C-A1:
+      title: Constant Pointers
+      content: >
+        Pointers should be marked 'const' if the pointed data should not be modified.
+    C-A2:
+      title: Typing
+      content: >
+        Use the most accurate types possible for data, such as 'size_t' and 'uint8_t.'
+    C-A3:
+      title: Line Break at End of File
+      content: >
+        Files must end with a line break, as defined by POSIX standards.
+    C-A4:
+      title: Static
+      content: >
+        Global variables and functions not used outside their compilation unit should
+        be marked with 'static.'
+
