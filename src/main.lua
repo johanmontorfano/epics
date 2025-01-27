@@ -14,18 +14,18 @@ local function print_guide(entry)
 
     if is_subsec then
         section = string.sub(section, 0, 3)
-        title = docs[section]["children"][entry]["title"]
-        content = docs[section]["children"][entry]["content"]
+        title = docs[section].children[entry].title
+        content = docs[section].children[entry].content
     else
-        title = docs[section]["title"]
-        content = table.concat(Get_sections(docs[section]["children"]),", ")
+        title = docs[section].title
+        content = table.concat(Get_sections(docs[section].children),", ")
     end
-    print(string.format("Section %s: %s", section, docs[section]["title"]))
+    print(Italic("Section %s: %s", section, Bold(docs[section].title)))
     if entry ~= section then
-        print(string.format("Rule   %s: %s", entry, title))
+        print(Italic("Rule   %s: %s", entry, Bold(title)))
     end
     for _, line in pairs(Compose_80_chars_lines(content)) do
-        print(line)
+        io.write("\n", line, "\n")
     end
 end
 

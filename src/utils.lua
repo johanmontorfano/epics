@@ -57,3 +57,11 @@ function Compose_80_chars_lines(line)
     table.insert(lines, sized_line)
     return lines
 end
+
+function Bold(line, ...)
+    return "\x1b[1m" .. string.format(line, ...) .. "\x1b[0m"
+end
+
+function Italic(line, ...)
+    return "\x1b[3m" .. string.format(line, ...) .. "\x1b[0m"
+end
