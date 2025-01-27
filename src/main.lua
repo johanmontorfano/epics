@@ -9,14 +9,23 @@ local sections = Get_sections(docs)
 local function print_guide(entry)
     local is_subsec = string.len(entry) == 4;
     local section = entry
+    local title
+    local content
 
     if is_subsec then
         section = string.sub(section, 0, 3)
-        print(docs[section]["children"][entry]["title"])
-        print(docs[section]["children"][entry]["content"])
+        title = docs[section]["children"][entry]["title"]
+        content = docs[section]["children"][entry]["content"]
     else
-        print(docs[section]["title"])
+        title = docs[section]["title"]
+        content = table.concat(Get_sections(docs[section]["children"]),", ")
     end
+
+    print(string.format("Section %s: %s", section, docs[section]["title"]))
+    if entry ~= section then
+        print(string.format("Rule   %s: %s", entry, title))
+    end
+    print(string.format("\n\t%s", content))
 end
 
 -- Checks if `cs_entry` is correcly formatted and an available entry. If it's 
