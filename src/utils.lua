@@ -38,4 +38,22 @@ function Get_sections(docs)
     return sections
 end
 
+-- Compose multiple lines of 80 charactes from the content of a string
+function Compose_80_chars_lines(line)
+    local lines = {}
+    local sized_line = ""
 
+    line = line .. " " .. " "
+    for w in line:gmatch("(.-) ") do
+        if string.len(sized_line) > 80 then
+            table.insert(lines, sized_line)
+            sized_line = ""
+        end
+        if string.len(sized_line) > 0 then
+            sized_line = string.format("%s ", sized_line)
+        end
+        sized_line = string.format("%s%s", sized_line, w)
+    end
+    table.insert(lines, sized_line)
+    return lines
+end
