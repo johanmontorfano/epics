@@ -24,8 +24,9 @@ local function print_guide(entry)
     if entry ~= section then
         print(Italic("Rule   %s: %s", entry, Bold(title)))
     end
+    io.write("\n")
     for _, line in pairs(Compose_80_chars_lines(content)) do
-        io.write("\n", line, "\n")
+        io.write(line, "\n")
     end
 end
 
