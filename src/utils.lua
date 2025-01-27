@@ -35,6 +35,7 @@ function Get_sections(docs)
             end
         end
     end
+    table.sort(sections)
     return sections
 end
 
