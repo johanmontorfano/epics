@@ -18,14 +18,14 @@ read -r -p "Proceed with the installation? [y/N]" -n 1
 echo
 
 if [[ "$REPLY" =~ ^[Yy]$ ]]; then
-    echo "Creating /opt/epics/main..."
     mkdir -p /opt/epics/main
+    echo "Created /opt/epics/main"
 
-    echo "Copying files to /opt/epics/main..."
-    cp -r * /opt/epics/main/.
+    cp -rf * /opt/epics/main/
+    echo "Copied files to /opt/epics/main"
 
-    echo "Creating an extension-less symlink to epics in /usr/bin"
     ln -sf /opt/epics/main/epics.sh /usr/bin/epics
+    echo "Created an extension-less symlink to epics in /usr/bin"
 
     echo "Installation successful !"
     echo "Call 'epics <guide_entry>' whenever you want..."
